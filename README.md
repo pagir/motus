@@ -216,6 +216,22 @@ Motus exists to make energy-efficient motor control accessible to every engineer
 
 ---
 
+## Coding standards
+
+Motus follows a **MISRA-aware** and **Barr-C-aligned** embedded C development style to improve safety, portability, readability, and long-term maintainability. MISRA C is widely used as a safety-oriented guideline set for embedded software, while Barr-C complements it with practical embedded C style rules focused on reducing defects and improving maintainability.
+
+This does **not** mean every Motus module claims formal MISRA compliance by default; instead, the project is designed to be **MISRA-aware**, with documented deviations where needed and with coding conventions chosen to support deterministic, reviewable, and portable firmware development. Barr-C is used as the pragmatic style baseline for day-to-day embedded C readability, naming, API structure, and maintainability.
+
+In practice, Motus follows these principles:
+
+- Prefer explicit and deterministic C constructs over clever or ambiguous patterns.
+- Use fixed-width integer types and clear units in interfaces for portability and reviewability.
+- Keep public APIs strongly namespaced and consistently structured across modules.
+- Avoid dynamic allocation and other patterns that complicate safety-critical or timing-sensitive embedded paths.
+- Treat coding style, module boundaries, and documentation as part of the framework architecture, not as afterthoughts.
+
+For contributor-facing details, see `docs/motus_coding_standard.md`.
+
 ## License
 
 Apache 2.0 — open for use, modification, and contribution.
